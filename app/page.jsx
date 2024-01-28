@@ -8,6 +8,9 @@ export default function Home() {
           <Link className={"font-black"} href={"/login"}>
             <button>Login</button>
           </Link>
+          <Link className={"font-black"} href={"/register"}>
+            <button>Register</button>
+          </Link>
         </main>
       </>
   );
