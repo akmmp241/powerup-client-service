@@ -1,10 +1,9 @@
 "use client"
 
-import Image from "next/image"
 import {Input} from "@/components/ui/input"
-import {useForm} from "react-hook-form"
 import {Label} from "@/components/ui/label";
 import {Button} from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Register() {
   const inputClass = "w-full sm:w-[320px] lg:w-[400px] py-2 lg:py-3 pl-4 bg-transparent outline-1 outline outline-primary focus-visible:outline-blue rounded-lg text-sm"
@@ -57,6 +56,10 @@ export default function Register() {
               </Button>
             </div>
           </form>
+        </div>
+        <div className={"self-center"}>
+          <span className={"text-white mr-1.5"}>Sudah punya akun?</span>
+          <Link href={"/login"} className={"text-blue"}>Masuk</Link>
         </div>
       </>
   )
