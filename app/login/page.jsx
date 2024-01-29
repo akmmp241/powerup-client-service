@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image";
 import GoogleIcon from "./assets/Google-logo.png"
 
-export default function Register() {
+export default function Login() {
   const inputClass = "w-full sm:w-[320px] lg:w-[400px] py-2 lg:py-3 pl-4 bg-transparent outline-1 outline outline-primary focus-visible:outline-blue rounded-lg text-sm"
 
   return (
@@ -24,7 +24,10 @@ export default function Register() {
               />
             </div>
             <div className={"flex flex-col gap-1.5"}>
-              <label className={"text-sm"} htmlFor="password">Kata sandi</label>
+              <div className={"flex justify-between items-center"}>
+                <Label className={"text-sm"} htmlFor="password">Kata sandi</Label>
+                <Link href={"/lupa-sandi"} className={"text-sm font-medium text-blue hover:opacity-70"}>Lupa Kata Sandi?</Link>
+              </div>
               <Input
                   className={inputClass}
                   type={"text"}
@@ -48,7 +51,8 @@ export default function Register() {
             <span className={"w-1/2 h-[1px] bg-primary border-t border-primary"}></span>
           </div>
           <div>
-            <Button className={"gap-2.5 w-full sm:w-[320px] lg:w-[400px] py-3 lg:py-4 pl-4 bg-transparent outline-1 outline outline-primary active:bg-primary active:text-black"}>
+            <Button
+                className={"gap-2.5 w-full sm:w-[320px] lg:w-[400px] py-3 lg:py-4 pl-4 bg-transparent outline-1 outline outline-primary active:bg-primary active:text-black"}>
               <Image
                   src={GoogleIcon}
                   alt={"sign in with Google"}
