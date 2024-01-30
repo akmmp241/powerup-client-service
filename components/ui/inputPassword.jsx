@@ -2,19 +2,19 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils"
-import Hide from "./assets/Hide.svg"
-import Show from "./assets/Show.svg"
+import hide from "./assets/Hide.svg"
+import show from "./assets/Show.svg"
 import Image from "next/image";
 import {useState} from "react";
 
 const PasswordInput = React.forwardRef(({ className, ...props }, ref) => {
-  const [visibility, setVisibility] = useState(false)
+  const [visibility, setVisibility] = useState(true)
 
   const togglePassword = () => {
     setVisibility(!visibility)
   }
 
-  const inputIcon = visibility ? Hide : Show
+  const inputIcon = visibility ? hide : show
   const inputType = visibility ? "password" : "text"
 
   return (

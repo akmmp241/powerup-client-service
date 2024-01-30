@@ -2,6 +2,7 @@ import {Input} from "@/components/ui/input"
 import {Label} from "@/components/ui/label";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
+import {PasswordInput} from "@/components/ui/inputPassword";
 
 export default function Register() {
   const inputClass = "w-full sm:w-[320px] lg:w-[400px] py-2 lg:py-3 pl-4 bg-transparent outline-1 outline outline-primary focus-visible:outline-blue rounded-lg text-sm"
@@ -22,7 +23,7 @@ export default function Register() {
               />
             </div>
             <div className={"flex flex-col gap-1.5"}>
-              <label className={"text-sm"} htmlFor="Nama">Nama</label>
+              <Label className={"text-sm"} htmlFor="Nama">Nama</Label>
               <Input
                   className={inputClass}
                   type={"text"}
@@ -30,18 +31,16 @@ export default function Register() {
               />
             </div>
             <div className={"flex flex-col gap-1.5"}>
-              <label className={"text-sm"} htmlFor="password">Kata sandi</label>
-              <Input
+              <Label className={"text-sm"} htmlFor="password">Kata sandi</Label>
+              <PasswordInput
                   className={inputClass}
-                  type={"text"}
                   placeholder={"Email Anda di sini"}
               />
             </div>
             <div className={"flex flex-col gap-1.5"}>
-              <label className={"text-sm"} htmlFor="confirm">Konfirmasi Kata Sandi</label>
-              <Input
+              <Label className={"text-sm"} htmlFor="confirm">Konfirmasi Kata Sandi</Label>
+              <PasswordInput
                   className={inputClass}
-                  type={"text"}
                   placeholder={"Email Anda di sini"}
               />
             </div>

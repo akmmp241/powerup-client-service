@@ -4,6 +4,7 @@ import {Button} from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image";
 import GoogleIcon from "./assets/Google-logo.png"
+import {PasswordInput} from "@/components/ui/inputPassword";
 
 export default function Login() {
   const inputClass = "w-full sm:w-[320px] lg:w-[400px] py-2 lg:py-3 pl-4 bg-transparent outline-1 outline outline-primary focus-visible:outline-blue rounded-lg text-sm"
@@ -26,11 +27,11 @@ export default function Login() {
             <div className={"flex flex-col gap-1.5"}>
               <div className={"flex justify-between items-center"}>
                 <Label className={"text-sm"} htmlFor="password">Kata sandi</Label>
-                <Link href={"/lupa-sandi"} className={"text-sm font-medium text-blue hover:opacity-70"}>Lupa Kata Sandi?</Link>
+                <Link href={"/lupa-sandi"} className={"text-sm font-medium text-blue hover:opacity-70"}>Lupa Kata
+                  Sandi?</Link>
               </div>
-              <Input
+              <PasswordInput
                   className={inputClass}
-                  type={"text"}
                   placeholder={"Email Anda di sini"}
               />
             </div>
