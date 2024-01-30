@@ -23,3 +23,11 @@ button[type=submit]:active {
   color: #A6B2CA;
   background-color: rgba(223, 228, 241, 0.5);
 }
+
+#password-toggle-icon {
+  position: absolute;
+  top: 25%;
+  right: 15px;
+  z-index: 99;
+  cursor: pointer;
+}
