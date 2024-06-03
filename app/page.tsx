@@ -23,7 +23,7 @@ export default async function Home() {
           <LineBreak/>
           <div className={"flex flex-col gap-8 w-full"}>
             <div>
-              <h1 className={"text-3xl font-bold mb-3"}>PowerUp Promo Top Up! ⚡</h1>
+              <h1 className={"text-2xl md:text-3xl text-center md:text-left font-bold mb-3"}>PowerUp Promo Top Up! ⚡</h1>
             </div>
             <Suspense fallback={<h1>Bang loading</h1>}>
               <Promo/>
@@ -32,8 +32,8 @@ export default async function Home() {
           <LineBreak/>
           <div className={"flex flex-col gap-8 w-full"}>
             <div>
-              <h1 className={"text-3xl font-bold mb-3"}>Game Terpopuler 🔥</h1>
-              <p className={"font-medium"}>Top Up Item di Game Favoritmu!</p>
+              <h1 className={"text-2xl md:text-3xl text-center md:text-left font-bold mb-3"}>Game Terpopuler 🔥</h1>
+              <p className={"text-center md:text-left font-medium"}>Top Up Item di Game Favoritmu!</p>
             </div>
             <Suspense fallback={<h1>Loading bang...</h1>}>
               <Popular/>

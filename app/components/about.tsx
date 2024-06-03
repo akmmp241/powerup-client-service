@@ -10,14 +10,14 @@ import headphoneIcon from "@/app/assets/iconoir_headset-help.svg"
 
 const About = () => {
   return (
-      <div className={"flex flex-col gap-8 w-full"}>
+      <div className={"flex flex-col gap-8 p-2 w-full"}>
         <div>
-          <h1 className={"text-3xl font-bold mb-3"}>PowerUp Store ⚡</h1>
-          <p className={"font-medium"}>Apa keuntungan yang didapatkan customer saat melakukan top up dan pembelian
+          <h1 className={"text-3xl text-center md:text-left font-bold mb-3"}>PowerUp Store ⚡</h1>
+          <p className={"text-justify m-auto md:text-left font-medium"}>Apa keuntungan yang didapatkan customer saat melakukan top up dan pembelian
             melalui website PowerUp? PowerUp menawarkan pembelian kredit game dengan lancar: tanpa registrasi ataupun
             log-in, dan kredit permainan akan ditambahkan secara instan.</p>
         </div>
-        <div className={"grid grid-cols-2 gap-8"}>
+        <div className={"grid grid-cols-1 md:grid-cols-2 gap-8"}>
           <Card className={"bg-secondary text-body-text border-none"}>
             <CardContent className={"flex flex-row justify-center items-center gap-5 p-5  w-full"}>
               <Image src={pilihanGame} alt={"controller"} width={60} height={60}/>

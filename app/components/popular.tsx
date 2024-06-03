@@ -20,7 +20,7 @@ const Popular = () => {
   }, []);
 
   return (
-      <div className={"grid grid-cols-3 gap-5"}>
+      <div className={"grid grid-cols-1 md:grid-cols-3 gap-5 p-4 md:p-0"}>
         {populars?.data.map((val, index: number) => (
             <div key={index} className={"relative popular-card border-[3px] border-transparent rounded-2xl"}>
               <Link href={val.link}>

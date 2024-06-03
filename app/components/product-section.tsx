@@ -60,11 +60,11 @@ const ProductSection = () => {
   return (
       <div className={"flex flex-col gap-8 w-full"}>
         <div>
-          <h1 className={"text-3xl font-bold mb-3"}>Pilih Kategori</h1>
-          <p className="font-medium">Berbagai Macam Pilihan TopUP yang lengkap</p>
+          <h1 className={"text-2xl md:text-3xl text-center md:text-left font-bold mb-3"}>Pilih Kategori</h1>
+          <p className="text-center md:text-left font-medium">Berbagai Macam Pilihan TopUP yang lengkap</p>
         </div>
 
-        <div className={"flex gap-3 overflow-scroll justify-between py-3 max-w-[50%]"}>
+        <div className={"flex gap-3 overflow-scroll justify-between py-3 md:max-w-[50%]"}>
           {categories.map((val: categoryInterface, key: number) => (
               <Button
                   key={key}
@@ -75,10 +75,10 @@ const ProductSection = () => {
         </div>
 
         <div>
-          <h1 className={"text-3xl font-bold mb-3"}>Top Up Game 🎮</h1>
+          <h1 className={"text-2xl md:text-3xl text-center md:text-left font-bold mb-3"}>Top Up Game 🎮</h1>
         </div>
 
-        <div className={"grid grid-cols-6 gap-5"}>
+        <div className={"grid grid-cols-2 gap-5 p-4"}>
           {operator && operator.map((val: operatorInterface, key: number) => (
               <Link href={`/${val.slug}`} key={key} className={"flex flex-col gap-2 bg-secondary w-full p-3 rounded-2xl"}>
                 <img src={val.image}  alt={val.name} className={"rounded-3xl"}/>

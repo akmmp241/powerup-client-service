@@ -23,9 +23,9 @@ const Promo = () => {
   }, []);
 
   return (
-      <div className={"grid grid-cols-4 gap-5"}>
+      <div className={"grid grid-cols-1 md:grid-cols-4 auto-cols-auto gap-5"}>
         {promos?.data.map((val, index: number) => (
-            <div key={index} className={"relative max-w-[300px] border-2 border-transparent hover:border-primary hover:opacity-60 rounded-2xl"}>
+            <div key={index} className={"relative max-w-[300px] m-auto border-2 border-transparent hover:border-primary hover:opacity-60 rounded-2xl"}>
               <Link href={"#"}>
                 <div className={"rounded-t-2xl"}>
                   <Image src={val.image_url} alt={val.description} width={300} height={140} sizes={"(max-width: 300px)"}/>
