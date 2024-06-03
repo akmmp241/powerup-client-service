@@ -4,8 +4,8 @@ import getCategories from "@/app/partials/getCategories";
 import {useEffect, useState} from "react";
 import {Button} from "@/components/ui/button";
 import getOperators from "@/app/partials/getOperators";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 
 interface categoryInterface {
   id: number
@@ -81,7 +81,7 @@ const ProductSection = () => {
         <div className={"grid grid-cols-2 md:grid-cols-6 gap-5 p-4"}>
           {operator && operator.map((val: operatorInterface, key: number) => (
               <Link href={`/${val.slug}`} key={key} className={"flex flex-col gap-2 bg-secondary w-full p-3 rounded-2xl"}>
-                <img src={val.image}  alt={val.name} className={"rounded-3xl"}/>
+                <Image src={val.image}  alt={val.name} width={120} height={120} style={{width: '100%', height: 'auto'}} quality={100} className={"rounded-3xl"}/>
                 <span className={"max-w-[100px] m-auto text-center"}>{val.name}</span>
               </Link>
           ))}
