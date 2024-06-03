@@ -36,7 +36,7 @@ const VirtualAccountDetails = (image: any, va: VirtualAccount) => {
           <p>Dari Mobile Banking</p>
           <ol>
             <li>1. Salin nomor virtual akun</li>
-            <li>2. login ke aplikasi livin' mandiri</li>
+            <li>2. login ke aplikasi livin mandiri</li>
             <li>3. klik bayar</li>
             <li>4. Cari penyedia jasa 70017 atau I-PAY</li>
             <li>5. paste/tempel nomor virtual akun tadi dan masukan nominal bayar yg sesuai</li>
@@ -113,7 +113,7 @@ const EwalletDetails = (channel_name: string | undefined, ewallet: Ewallet | und
           <p>Dari Mobile Banking</p>
           <ol>
             <li>1. Salin nomor virtual akun</li>
-            <li>2. login ke aplikasi livin' mandiri</li>
+            <li>2. login ke aplikasi livin mandiri</li>
             <li>3. klik bayar</li>
             <li>4. Cari penyedia jasa 70017 atau I-PAY</li>
             <li>5. paste/tempel nomor virtual akun tadi dan masukan nominal bayar yg sesuai</li>

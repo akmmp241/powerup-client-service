@@ -1,25 +1,27 @@
+"use client"
+
 import getPopular from "@/app/partials/getPopular";
 import Image from "next/image";
 import Link from "next/link";
+import {useEffect, useState} from "react";
+import {GetPopularsResponse} from "@/types/GetPopularsResponse";
 
-interface setData {
-  id: number
-  operator_id: number
-  operator_name: string
-  title: string
-  image_url: string
-  description: string
-  link: string
-}
+const Popular = () => {
+  const [populars, setPopulars] = useState<GetPopularsResponse>()
 
-const Popular = async () => {
+  const fetchPopulars = async () => {
+    const response = getPopular()
 
-  const {data} = await getPopular()
-  const payload = data.data
+    setPopulars(await response)
+  }
+
+  useEffect(() => {
+    fetchPopulars()
+  }, []);
 
   return (
       <div className={"grid grid-cols-3 gap-5"}>
-        {payload.map((val: setData, index: number) => (
+        {populars?.data.map((val, index: number) => (
             <div key={index} className={"relative popular-card border-[3px] border-transparent rounded-2xl"}>
               <Link href={val.link}>
                 <Image src={val.image_url} alt={val.description} width={420} height={210}/>

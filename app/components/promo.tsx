@@ -1,30 +1,30 @@
+"use client"
+
 import Link from "next/link";
 import Image from "next/image";
 import getPromos from "@/app/partials/getPromos";
 import formatRupiah from "@/helpers/format-rupiah";
 import priceLabel from "@/app/assets/Union.svg";
+import {useEffect, useState} from "react";
+import {GetPromosResponse} from "@/types/GetPromosResponse";
 
-interface setData {
-  id: number
-  product_id: number
-  product_name: string
-  title: string
-  description: string
-  percentage: number
-  product_url: string
-  product_price: number
-  final_price: number
-  image_url: string
-}
 
-const Promo = async () => {
+const Promo = () => {
+  const [promos, setPromos] = useState<GetPromosResponse>()
 
-  const {data} = await getPromos()
-  const payload = data.data
+  const fetchPromos = async () => {
+    const response = getPromos()
+
+    setPromos(await response)
+  }
+
+  useEffect(() => {
+    fetchPromos()
+  }, []);
 
   return (
       <div className={"grid grid-cols-4 gap-5"}>
-        {payload.map((val: setData, index: number) => (
+        {promos?.data.map((val, index: number) => (
             <div key={index} className={"relative max-w-[300px] border-2 border-transparent hover:border-primary hover:opacity-60 rounded-2xl"}>
               <Link href={"#"}>
                 <div className={"rounded-t-2xl"}>

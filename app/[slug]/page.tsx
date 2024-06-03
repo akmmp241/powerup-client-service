@@ -84,10 +84,10 @@ export default function Operator({params}: Params) {
   const [showPaymentDescription, setShowPaymentDescription] = useState<boolean>(false)
   const [formPayload, setFormPayload] = useState<FormData>(new FormData)
 
-  const fetchOperator = async (slug: string) => {
+  const fetchOperator = async () => {
     const baseUrl: string = "http://localhost:8000/api"
     try {
-      const {data} = await axios.get(`${baseUrl}/products/operators/${slug}`);
+      const {data} = await axios.get(`${baseUrl}/products/operators/${params.slug}`);
 
       const response: GetOperatorResponse = await data
 
@@ -142,7 +142,7 @@ export default function Operator({params}: Params) {
   }
 
   useEffect(() => {
-    fetchOperator(params.slug)
+    fetchOperator()
     fetchPaymentMethods()
   }, [isError])
 
