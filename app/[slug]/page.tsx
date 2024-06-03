@@ -29,6 +29,10 @@ import {Label} from "@/components/ui/label";
 import {useRouter} from "next/navigation";
 import {useToast} from "@/components/ui/use-toast";
 import {Toaster} from "@/components/ui/toaster";
+import fetchSingleOperator from "@/app/[slug]/_partials/fetchOperator";
+import fetchTypes from "@/app/[slug]/_partials/fetchTypes";
+import fetchProducts from "@/app/[slug]/_partials/fetchProducts";
+import fetchPaymentsMethods from "@/app/[slug]/_partials/fetchPaymentMethods";
 
 interface Params {
   params: {
@@ -85,11 +89,8 @@ export default function Operator({params}: Params) {
   const [formPayload, setFormPayload] = useState<FormData>(new FormData)
 
   const fetchOperator = async () => {
-    const baseUrl: string = "http://localhost:8000/api"
     try {
-      const {data} = await axios.get(`${baseUrl}/products/operators/${params.slug}`);
-
-      const response: GetOperatorResponse = await data
+      const response: GetOperatorResponse = await fetchSingleOperator(params.slug)
 
       setOperator(response);
 
@@ -103,34 +104,39 @@ export default function Operator({params}: Params) {
   }
 
   const fetchType = async (id: number | undefined) => {
-    const baseUrl: string = "http://localhost:8000/api"
-    const {data} = await axios.get(`${baseUrl}/products/types?operator_id=${id}`);
+    try {
+      const response: GetTypesResponse = await fetchTypes(id)
 
-    const response: GetTypesResponse = await data
+      setTypes(response)
+      setFormatForm(JSON.parse(response.data[0].format_form))
 
-    setTypes(response)
-    setFormatForm(JSON.parse(response.data[0].format_form))
+      if (currentActiveType === undefined) setCurrentActiveType(response.data[0].ref_id)
 
-    if (currentActiveType === undefined) setCurrentActiveType(response.data[0].ref_id)
-
-    await fetchProduct(response.data[0].ref_id)
+      await fetchProduct(response.data[0].ref_id)
+    } catch (err) {
+      if (err instanceof AxiosError) {
+        setIsError(!err?.response?.data.success)
+        setErrorCode(err?.response?.data.status_code)
+      }
+    }
   }
 
   const fetchProduct = async (id: number | undefined) => {
-    const baseUrl: string = "http://localhost:8000/api"
-    const {data} = await axios.get(`${baseUrl}/products?type_id=${id}`);
+    try {
+      const response: GetProductResponse = await fetchProducts(id);
 
-    const response: GetProductResponse = await data
-
-    setProducts(response)
+      setProducts(response);
+    } catch (err) {
+      if (err instanceof AxiosError) {
+        setIsError(!err?.response?.data.success)
+        setErrorCode(err?.response?.data.status_code)
+      }
+    }
   }
 
   const fetchPaymentMethods = async () => {
-    const baseUrl: string = "http://localhost:8000/api"
     try {
-      const {data} = await axios.get(`${baseUrl}/payments/methods`);
-
-      const response: GetPaymentMethodsResponse = await data
+      const response: GetPaymentMethodsResponse = await fetchPaymentsMethods()
 
       setPaymentMethods(response);
     } catch (err) {

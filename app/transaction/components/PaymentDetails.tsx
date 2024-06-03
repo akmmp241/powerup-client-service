@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import {Ewallet, GetTransactionResponse, PaymentActions, QRCode, VirtualAccount} from "@/types/GetTransactionResponse";
 import mandiri from "@/app/assets/mandiri.svg"

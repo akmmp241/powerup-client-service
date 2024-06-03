@@ -9,6 +9,7 @@ import Error from "next/error";
 import TransactionDetails from "@/app/transaction/components/TransactionDetails";
 import PaymentDetails from "@/app/transaction/components/PaymentDetails";
 import Footer from "@/app/components/footer";
+import fetchTransaction from "@/app/transaction/_partials/get-transaction";
 
 interface Params {
   params: {
@@ -23,11 +24,8 @@ const Transaction = ({params}: Params) => {
   const [transaction, setTransaction] = useState<GetTransactionResponse>()
 
   const getTransaction = async (id: string) => {
-    const baseUrl: string = "http://localhost:8000/api"
     try {
-      const {data} = await axios.get(`${baseUrl}/transaction/${id}`);
-
-      const response: GetTransactionResponse = await data
+      const response: GetTransactionResponse = await fetchTransaction(id)
 
       setTransaction(response)
 
