@@ -78,7 +78,7 @@ const ProductSection = () => {
           <h1 className={"text-2xl md:text-3xl text-center md:text-left font-bold mb-3"}>Top Up Game 🎮</h1>
         </div>
 
-        <div className={"grid grid-cols-2 gap-5 p-4"}>
+        <div className={"grid grid-cols-2 md:grid-cols-6 gap-5 p-4"}>
           {operator && operator.map((val: operatorInterface, key: number) => (
               <Link href={`/${val.slug}`} key={key} className={"flex flex-col gap-2 bg-secondary w-full p-3 rounded-2xl"}>
                 <img src={val.image}  alt={val.name} className={"rounded-3xl"}/>
