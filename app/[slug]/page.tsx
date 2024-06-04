@@ -33,6 +33,7 @@ import fetchSingleOperator from "@/app/[slug]/_partials/fetchOperator";
 import fetchTypes from "@/app/[slug]/_partials/fetchTypes";
 import fetchProducts from "@/app/[slug]/_partials/fetchProducts";
 import fetchPaymentsMethods from "@/app/[slug]/_partials/fetchPaymentMethods";
+import diamond from "@/app/assets/diamond.svg"
 
 interface Params {
   params: {
@@ -191,22 +192,6 @@ export default function Operator({params}: Params) {
   const handlePaymentCanOpen = (formData: FormData) => {
     let open: boolean = true
 
-    // // @ts-ignore
-    // for (let i = 0; i < formatForm.length; i++) {
-    //   // @ts-ignore
-    //   if (formData.get(formatForm[i].name) === "") {
-    //     toast({
-    //       variant: "destructive",
-    //       title: "Masukan semua informasi akun yang diperlukan!",
-    //     })
-    //     const elem = document.getElementById("info-akun")
-    //     elem?.scrollIntoView({
-    //       behavior: "smooth",
-    //     })
-    //     return
-    //   }
-    // }
-
     if (formData.get("tujuan") === "") {
       toast({
         variant: "destructive",
@@ -350,12 +335,12 @@ export default function Operator({params}: Params) {
               </div>
               <div className={"flex flex-col gap-12 flex-grow"}>
                 <div id={"info-akun"} className={"flex flex-col gap-8 w-full bg-secondary rounded-[12px]"}>
-                  <div className={"relative flex flex-row gap-10 items-center"}>
+                  <div className={"relative flex flex-row gap-2 md:gap-10 items-center"}>
                     <div
-                        className={"absolute flex justify-center items-center left-5 -top-5 w-14 h-14 rounded-full bg-secondary text-white text-center"}>
+                        className={"absolute flex justify-center items-center left-4 -top-4 md:left-5 md:-top-5 w-10 h-10 md:w-14 md:h-14 rounded-full bg-secondary text-white text-center"}>
                       <h1 className={"flex justify-center items-center w-10 h-10 rounded-full text-center bg-primary"}>1</h1>
                     </div>
-                    <h2 className={"relative font-bold left-24 mt-2 text-2xl"}>Masukan Info Akun</h2>
+                    <h2 className={"relative font-bold left-20 md:left-24 mt-2 text-xl md:text-2xl"}>Masukan Info Akun</h2>
                   </div>
                   <div className={"flex flex-col xl:flex-row gap-4 w-[90%] mx-auto pb-6"}>
                     {formatForm?.map((value, index) => {
@@ -411,10 +396,10 @@ export default function Operator({params}: Params) {
                 <div id={"product"} className={"flex flex-col gap-8 bg-secondary rounded-[12px]"}>
                   <div className={"relative flex flex-row gap-10 items-center"}>
                     <div
-                        className={"absolute flex justify-center items-center left-5 -top-5 w-14 h-14 rounded-full bg-secondary text-white text-center"}>
+                        className={"absolute flex justify-center items-center left-4 -top-4 md:left-5 md:-top-5 w-10 h-10 md:w-14 md:h-14 rounded-full bg-secondary text-white text-center"}>
                       <h1 className={"flex justify-center items-center w-10 h-10 rounded-full text-center bg-primary"}>2</h1>
                     </div>
-                    <h2 className={"relative font-bold left-24 mt-2 text-2xl"}>Pilih Item TopUp</h2>
+                    <h2 className={"relative font-bold left-20 md:left-24 mt-2 text-xl md:text-2xl"}>Pilih Item TopUp</h2>
                   </div>
                   <div className={"flex flex-col gap-2 w-[90%] mx-auto"}>
                     <h3 className={"text-white font-bold"}>Pilih Kategori</h3>
@@ -424,11 +409,14 @@ export default function Operator({params}: Params) {
                         return (
                             <button
                                 type={"button"}
-                                className={`flex gap-3 items-center bg-${selected ? "inactive-text" : "background"} active:bg-primary p-3 border-2 border-${selected ? "primary" : "[#303745]"} rounded-[8px] w-full`}
+                                className={`flex gap-3 items-center ${selected ? "bg-secondary" : "bg-background"} active:bg-primary p-3 border-2 ${selected ? "border-primary" : "border-[#303745]"} rounded-[8px] w-full`}
                                 onClick={() => handleChooseCategory(value.ref_id)}
                                 key={index}>
-                              <div className={"aspect-square w-[40px] h-[40px] bg-white"}></div>
-                              <h1 className={"text-md overflow-hidden"}>{value.name}</h1>
+                              <div className={"aspect-square w-[40px] h-[40px] bg-white"}>
+                                {/*@ts-ignore*/}
+                                <Image alt={"types"} src={operator?.data?.image} width={40} height={40} style={{width: '100%', height: 'auto'}}/>
+                              </div>
+                              <h1 className={"text-md overflow-hidden font-bold"}>{value.name}</h1>
                             </button>
                         )
                       })}
@@ -442,9 +430,11 @@ export default function Operator({params}: Params) {
                         return (
                             <button key={index} type={"button"}
                                     onClick={() => handleChooseProduct(value)}
-                                    className={`flex flex-col justify-center items-center gap-1 w-full h-40 bg-${selected ? "inactive-text" : "background"} border-2 border-${selected ? "primary" : "[#303745]"} rounded-[8px]`}>
-                              <div className={"w-[40px] h-[40px] bg-white"}></div>
-                              <h3 className={"font-bold"}>{value.name}</h3>
+                                    className={`flex flex-col justify-center items-center gap-1 w-full h-40 ${selected ? "bg-secondary" : "bg-background"} border-2 ${selected ? "border-primary" : "border-[#303745]"} rounded-[8px]`}>
+                              <div className={"w-[40px] h-[40px]"}>
+                                <Image alt={"diamond"} src={diamond} width={40} height={40} style={{width: '100%', height: 'auto'}}/>
+                              </div>
+                              <h3 className={"text-xs md:text-sm font-bold"}>{value.name}</h3>
                               <p className={"text-sm text-inactive-text"}>{value.description}</p>
                               <h3>{formatRP(value.price)}</h3>
                             </button>
@@ -456,10 +446,10 @@ export default function Operator({params}: Params) {
                 <div id={"payment-method"} className={"flex flex-col gap-8 bg-secondary rounded-[12px]"}>
                   <div className={"relative flex flex-row gap-10 items-center"}>
                     <div
-                        className={"absolute flex justify-center items-center left-5 -top-5 w-14 h-14 rounded-full bg-secondary text-white text-center"}>
+                        className={"absolute flex justify-center items-center left-4 -top-4 md:left-5 md:-top-5 w-10 h-10 md:w-14 md:h-14 rounded-full bg-secondary text-white text-center"}>
                       <h1 className={"flex justify-center items-center w-10 h-10 rounded-full text-center bg-primary"}>3</h1>
                     </div>
-                    <h2 className={"relative font-bold left-24 mt-2 text-2xl"}>Pilih Metode
+                    <h2 className={"relative font-bold left-20 md:left-24 mt-2 text-xl md:text-2xl"}>Pilih Metode
                       Pembayaran</h2>
                   </div>
                   <div className={"p-6"}>
@@ -512,13 +502,13 @@ export default function Operator({params}: Params) {
                 <div id={"email"} className={"flex flex-col gap-8 bg-secondary rounded-[12px]"}>
                   <div className={"relative flex flex-row gap-10 items-center"}>
                     <div
-                        className={"absolute flex justify-center items-center left-5 -top-6 w-14 h-14 rounded-full bg-secondary text-white text-center"}>
+                        className={"absolute flex justify-center items-center left-4 -top-4 md:left-5 md:-top-5 w-10 h-10 md:w-14 md:h-14 rounded-full bg-secondary text-white text-center"}>
                       <h1 className={"flex justify-center items-center w-10 h-10 rounded-full text-center bg-primary"}>4</h1>
                     </div>
-                    <h2 className={"relative font-bold left-24 mt-2 text-2xl"}>Masukan info kontak</h2>
+                    <h2 className={"relative font-bold left-20 md:left-24 mt-2 text-xl md:text-2xl"}>Masukan info kontak</h2>
                   </div>
                   <div className={"flex flex-col gap-3 px-6 pb-6"}>
-                    <Label className={"text-xl"}>Email</Label>
+                    <Label className={"hidden md:block md:text-xl"}>Email</Label>
                     <input type={"email"}
                            name={"email"}
                            className={"px-5 py-3 outline-none rounded-[8px] focus:outline-primary bg-[#191D24]"}

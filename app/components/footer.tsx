@@ -8,35 +8,35 @@ import facebookIcon from "@/app/assets/fi_facebook.svg"
 
 const Footer = () => {
   return (
-      <footer className={"flex flex-col gap-20 w-full max-w-[1220px] m-auto text-body-text p-2 mt-12"}>
-        <div className={"flex flex-col self-center gap-4 w-1/3"}>
-          <div className={"flex flex-row items-center justify-center gap-3 cursor-pointer"}>
+      <footer className={"flex flex-col gap-10 md:gap-20 w-full max-w-[1220px] m-auto text-body-text p-2 mt-12"}>
+        <div className={"flex flex-col self-center md:self-start gap-4 w-1/3"}>
+          <div className={"flex flex-row items-center justify-center md:justify-normal gap-3 cursor-pointer"}>
             <Image src={powerUpLogo} alt={"Logo PowerUp"}/>
             <h1 className={"text-body-text text-2xl font-bold"}>PowerUp</h1>
           </div>
           <p className={"text-center md:text-left font-medium"}>Top up lebih mudah dan tanpa hambatan dengan melakukan
             top up di PowerUp 🚀</p>
         </div>
-        <div className={"flex flex-row justify-center w-full"}>
-          <ul className={"grid grid-cols-1 justify-items-center gap-16 w-full font-medium basis-3/4"}>
-            <li className={"flex flex-col items-center gap-2 w-fit"}>
-              <span className={"text-2xl md:tex text-inactive-text"}>LOKASI</span>
+        <div className={"flex flex-row justify-center md:justify-normal w-full"}>
+          <ul className={"grid grid-cols-1 md:grid-cols-3 justify-items-center md:justify-items-start gap-8 md:gap-16 w-full font-medium basis-3/4"}>
+            <li className={"flex flex-col items-center md:items-start gap-2 w-fit"}>
+              <span className={"text-xl md:text-left text-inactive-text"}>LOKASI</span>
               <p>Semarang, Jawa Tengah, Indonesia</p>
             </li>
-            <li className={"flex flex-col items-center gap-2 w-fit"}>
-              <span className={"text-inactive-text"}>EMAIL</span>
+            <li className={"flex flex-col items-center md:items-start gap-2 w-fit"}>
+              <span className={"text-xl md:text-left text-inactive-text"}>EMAIL</span>
               <p>kelompok404@gmail.com</p>
             </li>
-            <li className={"flex flex-col items-center gap-2 w-fit"}>
-              <span className={"text-inactive-text"}>DUKUNGAN</span>
+            <li className={"flex flex-col items-center md:items-start gap-2 w-fit"}>
+              <span className={"text-xl md:text-left text-inactive-text"}>DUKUNGAN</span>
               <Link href={"/#"} className={"underline"}>Pusat Bantuan</Link>
             </li>
-            <li className={"flex flex-col items-center gap-2 w-fit"}>
-              <span className={"text-inactive-text"}>JAM OPERASIONAL</span>
+            <li className={"flex flex-col items-center md:items-start gap-2 w-fit"}>
+              <span className={"text-xl md:text-left text-inactive-text"}>JAM OPERASIONAL</span>
               <p>07:00 WIB - 22:00 WIB</p>
             </li>
-            <li className={"flex flex-col items-center gap-2 w-fit"}>
-              <span className={"text-inactive-text"}>HUBUNGI KAMI</span>
+            <li className={"flex flex-col items-center md:items-start gap-2 w-fit"}>
+              <span className={"text-xl md:text-left text-inactive-text"}>HUBUNGI KAMI</span>
               <p>+62 838 7390 6995</p>
             </li>
           </ul>

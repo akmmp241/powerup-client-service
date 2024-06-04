@@ -1,7 +1,7 @@
 "use client"
 
 import "@/app/register/style.css"
-import axios, {AxiosError} from "axios";
+import {AxiosError} from "axios";
 import {useEffect, useState} from "react";
 import {Ewallet, GetTransactionResponse, OverTheCounter, QRCode, VirtualAccount} from "@/types/GetTransactionResponse";
 import Navbar from "@/app/components/navbar";

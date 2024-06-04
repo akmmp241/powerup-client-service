@@ -242,7 +242,7 @@ const PaymentDetails = ({transaction}: { transaction: GetTransactionResponse | u
 
   return (
       <div className={"flex flex-col gap-8 w-full p-6 bg-[#191D24] rounded-xl"}>
-        <div className={"flex justify-between w-full pb-6 border-b-2 border-b-[#303745]"}>
+        <div className={"flex flex-col gap-4 md:flex-row justify-between w-full pb-6 border-b-2 border-b-[#303745]"}>
           <div className={"flex gap-4"}>
             <div className={"size-20"}>
               {/*@ts-ignore*/}
@@ -255,7 +255,7 @@ const PaymentDetails = ({transaction}: { transaction: GetTransactionResponse | u
               <p className={"text-sm"}>{transaction?.data?.transaction?.product?.operator_name}</p>
             </div>
           </div>
-          <div className={"flex flex-col justify-evenly text-right"}>
+          <div className={"flex flex-col justify-evenly text-center md:text-right"}>
             <h2 className={"text-xl font-bold"}>Total Pembayaran</h2>
             <h1 className={"text-xl font-bold"}>Rp. {transaction?.data?.transaction?.total}</h1>
           </div>
