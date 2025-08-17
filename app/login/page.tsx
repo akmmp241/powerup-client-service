@@ -45,13 +45,13 @@ const Login = () => {
         {/*Login Google*/}
         <div className={"flex flex-col gap-6"}>
           <div className={"flex flex-row justify-between items-center"}>
-            <span className={"w-1/2 h-[1px] bg-primary border-t border-primary"}></span> {/* <-- garis */}
-            <span className={"w-full mx-4 text-center text-sm"}>Atau lanjutkan dengan</span>
-            <span className={"w-1/2 h-[1px] bg-primary border-t border-primary"}></span> {/* <-- garis */}
+            <span className={"w-1/2 h-[1px]  border-t "}></span> {/* <-- garis */}
+            <span className={"w-full mx-4 text-center text-white text-sm"}>Atau lanjutkan dengan</span>
+            <span className={"w-1/2 h-[1px]  border-t "}></span> {/* <-- garis */}
           </div>
           <div>
             <Button
-                className={"gap-2.5 w-full sm:w-[320px] lg:w-[400px] py-3 lg:py-4 pl-4 bg-transparent outline-1 outline outline-primary active:bg-primary active:text-black"}>
+                className={"gap-2.5 w-full sm:w-[320px] lg:w-[400px] py-3 lg:py-4 pl-4 bg-transparent outline-1 outline  active:bg-primary active:text-black"}>
               <Image
                   src={GoogleIcon}
                   alt={"sign in with Google"}

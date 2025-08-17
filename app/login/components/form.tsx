@@ -7,12 +7,12 @@ import {ErrorMessagesType} from "@/types/errorMessages.type";
 
 const Form = ({formHandler, errorMessage}: { errorMessage: ErrorMessagesType | undefined, formHandler: any }) => {
 
-  const inputClass = "w-full sm:w-[320px] lg:w-[400px] py-2 lg:py-3 pl-4 bg-transparent outline-1 outline outline-primary focus-visible:outline-blue rounded-lg text-sm"
+  const inputClass = "w-full sm:w-[320px] lg:w-[400px] py-2 lg:py-3 pl-4 bg-transparent outline-1 outline focus-visible:outline-primary rounded-lg text-sm"
   return (
       <div>
         <form
             action={formHandler}
-            className={"flex flex-col gap-6 text-primary"}>
+            className={"flex flex-col gap-6 text-white"}>
           <div className={"flex flex-col gap-1.5"}>
             <Label className={"text-sm"} htmlFor="Email">Email</Label>
             <Input
@@ -29,7 +29,7 @@ const Form = ({formHandler, errorMessage}: { errorMessage: ErrorMessagesType | u
           <div className={"flex flex-col gap-1.5"}>
             <div className={"flex justify-between items-center"}>
               <Label className={"text-sm"} htmlFor="password">Kata sandi</Label>
-              <Link href={"/forget-password"} className={"text-sm font-medium text-blue hover:opacity-70"}>Lupa Kata
+              <Link href={"/forget-password"} className={"text-sm text-primary font-medium text-blue hover:opacity-70"}>Lupa Kata
                 Sandi?</Link>
             </div>
             <PasswordInput
@@ -48,7 +48,7 @@ const Form = ({formHandler, errorMessage}: { errorMessage: ErrorMessagesType | u
             <Button
                 type={"submit"}
                 size={"lg"}
-                className={"w-full bg-blue rounded-lg mt-2 font-bold"}>
+                className={"w-full bg-primary rounded-lg mt-2 font-bold"}>
               Masuk
             </Button>
           </div>

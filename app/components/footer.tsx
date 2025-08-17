@@ -25,7 +25,7 @@ const Footer = () => {
             </li>
             <li className={"flex flex-col items-center md:items-start gap-2 w-fit"}>
               <span className={"text-xl md:text-left text-inactive-text"}>EMAIL</span>
-              <p>kelompok404@gmail.com</p>
+              <p>akmalmp241@gmail.com</p>
             </li>
             <li className={"flex flex-col items-center md:items-start gap-2 w-fit"}>
               <span className={"text-xl md:text-left text-inactive-text"}>DUKUNGAN</span>
@@ -37,7 +37,7 @@ const Footer = () => {
             </li>
             <li className={"flex flex-col items-center md:items-start gap-2 w-fit"}>
               <span className={"text-xl md:text-left text-inactive-text"}>HUBUNGI KAMI</span>
-              <p>+62 838 7390 6995</p>
+              <p>+62 851 5882 4017</p>
             </li>
           </ul>
         </div>
