@@ -67,7 +67,7 @@ const populars_dummy: PopularProps[] = [
         operator_id: 6,
         operator_name: "COC",
         title: "",
-        image_url: "/assets/popular-lol.png",
+        image_url: "/assets/popular-coc.png",
         description: "Clash Of Clans",
         link: "/#",
     }
