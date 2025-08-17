@@ -98,7 +98,7 @@ const ProductSection = () => {
 
             <div
                 className={
-                    "flex gap-3 overflow-scroll justify-between py-3 md:max-w-[50%]"
+                    "flex gap-3 overflow-scroll justify-between py-3 px-3 lg:px-0 md:max-w-[50%]"
                 }
             >
                 {categories.map((val: categoryInterface, key: number) => (

@@ -2,7 +2,7 @@ import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/co
 
 const Faqs = () => {
   return (
-      <div className={"flex flex-col md:flex-row gap-16 w-full p-2"}>
+      <div className={"flex flex-col md:flex-row gap-16 w-full p-6 md:p-2"}>
         <div className={"basis-1/3"}>
           <h1 className={"text-3xl text-center md:text-left font-bold mb-3"}>FAQs</h1>
           <p className={"text-justify md:text-left font-medium"}>Jika pertanyaan Anda tidak terjawab di sini, jangan

@@ -10,7 +10,7 @@ import headphoneIcon from "@/app/assets/iconoir_headset-help.svg"
 
 const About = () => {
   return (
-      <div className={"flex flex-col gap-8 p-2 w-full"}>
+      <div className={"flex flex-col gap-8 p-6 md:p-2 w-full"}>
         <div>
           <h1 className={"text-3xl text-center md:text-left font-bold mb-3"}>PowerUp Store ⚡</h1>
           <p className={"text-justify m-auto md:text-left font-medium"}>Apa keuntungan yang didapatkan customer saat melakukan top up dan pembelian
